@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">VERRA</string>
+    <string name="app_name">Verra</string>
+
+    <!-- Animation de la Page d'accueil-->
+    <string name="lobby">VERRA</string>
+
+    <!-- Page Inscription-->
+    <string name="page_register">Inscription</string>
+    <string name="page_register_button">Inscrire</string>
+    
+    <!-- Page Connexion-->
+    <string name="page_link">Connection</string>
+    <string name="page_link_button">Connecter</string>
+    <string name="page_link_forget">Mot de passe oublié</string>
+    <string name="page_link_signup">PREMIERE VISITE?\nCréer un compte</string>
+
+    <!-- Page d'accueil-->
+    <string name="home_page_lobby">Accueil</string>
+    <string name="home_page_man">Homme</string>
+    <string name="home_page_women">Femme</string>
+    <string name="home_page_child">Enfant</string>
+    <string name="home_page_advertisement">Nouvelle collection</string>
+    <string name="home_page_advertisement_description">Découvrir jusqu\'à -50% sur la première inscription.</string>
+    <string name="home_page_advertisement_shop">Achetez maintenant</string>
+
+    <string name="home_page_title">Article populaire</string>
+    <string name="home_page_filter">Tout</string>
+
+    <!-- Article -->
+    <string name="article_description">Description de l\'article</string>
+    <string name="article_name">Nom de l\'article</string>
+    <string name="article_price">Le prix de l\'article</string>
 </resources>
