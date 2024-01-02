@@ -18,8 +18,8 @@
     <string name="add_page_link_email_input">@string/add_page_register_email_input</string>
     <string name="add_page_link_password_input">@string/add_page_register_password_input</string>
     <string name="page_link_button">Connecter</string>
-    <string name="page_link_forget">Mot de passe oublié</string>
-    <string name="page_link_signup">PREMIERE VISITE?\nCréer un compte</string>
+    <string name="page_link_forget">Mot de passe oublié ?</string>
+    <string name="page_link_signup">PREMIERE VISITE ?\nCréer un compte</string>
 
     <!-- Page d'accueil-->
     <string name="home_page_lobby">Accueil</string>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1057921226568",
+    "project_id": "verra-d8488",
+    "storage_bucket": "verra-d8488.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057921226568:android:00fc41f15f08492676057d",
+        "android_client_info": {
+          "package_name": "fr.raouf.verra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCaC3bD4_nloFm21u0I-lN40XzingBfz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

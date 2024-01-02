@@ -34,70 +34,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                android:src="@drawable/ic_profil" />
-
-            <EditText
-                style="@style/DefaultTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/add_page_register_name_input" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/vanilla">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:src="@drawable/ic_profil" />
-
-            <EditText
-                style="@style/DefaultTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/add_page_register_lastname_input" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/vanilla">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:src="@drawable/ic_phone" />
-
-            <EditText
-                style="@style/DefaultTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/add_page_register_number_input" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/vanilla">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="10dp"
                 android:src="@drawable/ic_email" />
 
             <EditText
@@ -133,11 +69,25 @@
             android:layout_height="70dp"
             android:layout_margin="@dimen/default_marginTop"
             android:background="@color/brown"
-            android:text="@string/page_register_button"
+            android:text="@string/page_link_button"
+            style="@style/ButtonTextStyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/page_link_forget"
+            style="@style/ButtonTextStyle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textAlignment="center"
+            android:text="@string/page_link_signup"
             style="@style/ButtonTextStyle"/>
 
     </LinearLayout>
-
 
 
 </LinearLayout>
