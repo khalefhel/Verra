@@ -5,23 +5,45 @@
     <string name="lobby">VERRA</string>
 
     <!-- Page Inscription-->
-    <string name="page_register">Inscription</string>
-    <string name="add_page_register_name_input">Nom</string>
-    <string name="add_page_register_lastname_input">Prénom</string>
-    <string name="add_page_register_number_input">Numéro de téléphone</string>
-    <string name="add_page_register_email_input">E-mail</string>
-    <string name="add_page_register_password_input">Mot de passe</string>
-    <string name="page_register_button">Inscrire</string>
+    <string name="register_page">Inscription</string>
+    <string name="register_add_page_name_input">Nom</string>
+    <string name="register_add_page_lastname_input">Prénom</string>
+    <string name="register_add_page_number_input">Numéro de téléphone</string>
+    <string name="register_add_page_email_input">E-mail</string>
+    <string name="register_add_page_password_input">Mot de passe</string>
+    <string name="register_page_register_button">Inscrire</string>
 
     <!-- Page Connexion-->
-    <string name="page_link">Connection</string>
-    <string name="add_page_link_email_input">@string/add_page_register_email_input</string>
-    <string name="add_page_link_password_input">@string/add_page_register_password_input</string>
-    <string name="page_link_button">Connecter</string>
-    <string name="page_link_forget">Mot de passe oublié ?</string>
-    <string name="page_link_signup">PREMIERE VISITE ?\nCréer un compte</string>
+    <string name="link_page">Connection</string>
+    <string name="link_add_page_email_input">@string/register_add_page_email_input</string>
+    <string name="link_add_page_password_input">@string/register_add_page_password_input</string>
+    <string name="link_page_button">Connecter</string>
+    <string name="link_page_forget">Mot de passe oublié ?</string>
+    <string name="link_page_signup">PREMIERE VISITE ?\nCréer un compte</string>
 
-    <!-- Page d'accueil-->
+    <!-- Page de payement-->
+    <string name="payment_title">Choisissez on moyen de payement.</string>
+
+    <string name="payment_visa_choose">Visa</string>
+    <string name="payment_card_title">Carte bancaire</string>
+    <string name="payment_holder_title">Titulaire de la carte</string>
+    <string name="payment_holder_input">Ex: Dominic Joseph</string>
+    <string name="payment_code_title">Code de la carte</string>
+    <string name="payment_code_input">Ex: 55445521445412</string>
+    <string name="payment_date_title">Date d\'éxpiration</string>
+    <string name="payment_date_input">Ex: 12/24</string>
+    <string name="payment_cvc_title">CVC</string>
+    <string name="payment_cvc_input">Ex: 123</string>
+
+    <string name="payment_mod_choose">Paypal</string>
+    
+    <string name="payment_total_title">TOTAL</string>
+    <integer name="payment_price">0</integer>
+    <string name="payment_price_pic">£</string>
+    <string name="payment_button_command">Commandez</string>
+    
+
+    <!-- Page d'accueil
     <string name="home_page_lobby">Accueil</string>
     <string name="home_page_man">Homme</string>
     <string name="home_page_women">Femme</string>
@@ -31,10 +53,11 @@
     <string name="home_page_advertisement_shop">Achetez maintenant</string>
 
     <string name="home_page_title">Article populaire</string>
-    <string name="home_page_filter">Tout</string>
+    <string name="home_page_filter">Tout</string>-->
 
-    <!-- Article -->
+    <!-- Article
     <string name="article_description">Description de l\'article</string>
     <string name="article_name">Nom de l\'article</string>
-    <string name="article_price">Le prix de l\'article</string>
+    <string name="article_price">Le prix de l\'article</string>-->
+
 </resources>
