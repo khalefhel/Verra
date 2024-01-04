@@ -17,9 +17,10 @@
     <string name="link_page">Connection</string>
     <string name="link_add_page_email_input">@string/register_add_page_email_input</string>
     <string name="link_add_page_password_input">@string/register_add_page_password_input</string>
-    <string name="link_page_button">Connecter</string>
+    <string name="link_page_button">Se Connecter</string>
     <string name="link_page_forget">Mot de passe oublié ?</string>
-    <string name="link_page_signup">PREMIERE VISITE ?\nCréer un compte</string>
+    <string name="link_page_signup">Vous n\'avez pas de compte?</string>
+    <string name="link_page_signup_click">Inscrivez-vous</string>
 
     <!-- Page de payement-->
     <string name="payment_title">Choisissez on moyen de payement.</string>
