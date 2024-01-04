@@ -7,7 +7,7 @@ import fr.raouf.verra.fragments.LinkFragment
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.payment
+        setContentView(R.layout.loginnn
         )
     }
 }

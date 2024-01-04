@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="default_marginTop">80dp</dimen>
+    <dimen name="round_border">30dp</dimen>
+
 </resources>
