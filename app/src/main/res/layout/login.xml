@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="@string/register_page"
+            android:text="@string/link_page"
             android:textColor="@color/brown"
             android:textSize="22dp"/>
     </LinearLayout>
@@ -61,7 +61,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_profil"
+                android:src="@drawable/ic_email"
                 android:layout_marginLeft="15dp"/>
 
             <EditText
@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="50dp"
-            android:text="@string/link_page_button"
+            android:text="@string/link_page"
             android:textColor="@color/brown"
             android:background="@drawable/rounded_button"
             style="@style/ButtonTextStyle"/>
@@ -132,6 +132,7 @@
                 android:layout_marginRight="20dp"/>
 
             <Button
+                android:id="@+id/button_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/link_page_signup_click"

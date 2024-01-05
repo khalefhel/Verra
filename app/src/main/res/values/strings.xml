@@ -7,17 +7,16 @@
     <!-- Page Inscription-->
     <string name="register_page">Inscription</string>
     <string name="register_add_page_name_input">Nom</string>
-    <string name="register_add_page_lastname_input">Prénom</string>
     <string name="register_add_page_number_input">Numéro de téléphone</string>
     <string name="register_add_page_email_input">E-mail</string>
     <string name="register_add_page_password_input">Mot de passe</string>
-    <string name="register_page_register_button">Inscrire</string>
+    <string name="register_page_signup">Vous avez déjà un compte?</string>
+    <string name="register_page_link_click">Connectez-vous</string>
 
     <!-- Page Connexion-->
-    <string name="link_page">Connection</string>
+    <string name="link_page">Connexion</string>
     <string name="link_add_page_email_input">@string/register_add_page_email_input</string>
     <string name="link_add_page_password_input">@string/register_add_page_password_input</string>
-    <string name="link_page_button">Se Connecter</string>
     <string name="link_page_forget">Mot de passe oublié ?</string>
     <string name="link_page_signup">Vous n\'avez pas de compte?</string>
     <string name="link_page_signup_click">Inscrivez-vous</string>
