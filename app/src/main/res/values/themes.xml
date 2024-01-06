@@ -43,4 +43,21 @@
         <item name="fontFamily">@font/cinzel</item>
     </style>
 
+    <!-- Home page -->
+    <style name="AdvertisementText">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AdvertisementTextDescription">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="HomeCommandTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
 </resources>

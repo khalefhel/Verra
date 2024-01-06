@@ -43,17 +43,19 @@
     <string name="payment_button_command">Commandez</string>
     
 
-    <!-- Page d'accueil
+    <!--Page d'accueil-->
+    <string name="home_page_search_input">Rechercher..</string>
+    
     <string name="home_page_lobby">Accueil</string>
     <string name="home_page_man">Homme</string>
     <string name="home_page_women">Femme</string>
     <string name="home_page_child">Enfant</string>
     <string name="home_page_advertisement">Nouvelle collection</string>
     <string name="home_page_advertisement_description">Découvrir jusqu\'à -50% sur la première inscription.</string>
-    <string name="home_page_advertisement_shop">Achetez maintenant</string>
+    <string name="home_page_advertisement_shop">Commandez</string>
 
     <string name="home_page_title">Article populaire</string>
-    <string name="home_page_filter">Tout</string>-->
+    <string name="home_page_filter">Tout</string>
 
     <!-- Article
     <string name="article_description">Description de l\'article</string>
