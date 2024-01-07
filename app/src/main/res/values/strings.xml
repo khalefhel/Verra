@@ -55,11 +55,11 @@
     <string name="home_page_advertisement_shop">Commandez</string>
 
     <string name="home_page_title">Article populaire</string>
-    <string name="home_page_filter">Tout</string>
+    <string name="home_page_filter"><u>Tout</u></string>
 
-    <!-- Article
-    <string name="article_description">Description de l\'article</string>
+    <!-- Article -->
+    <string name="article_description"><u>Description de l\'article</u></string>
     <string name="article_name">Nom de l\'article</string>
-    <string name="article_price">Le prix de l\'article</string>-->
+    <string name="article_price">Le prix de l\'article</string>
 
 </resources>

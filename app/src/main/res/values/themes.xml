@@ -60,4 +60,21 @@
         <item name="android:textSize">13dp</item>
     </style>
 
+    <style name="HomeFilterTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="ArticleDescriptionStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">7dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ArticleNameStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">7dp</item>
+        <item name="fontFamily">@font/cinzel</item>
+    </style>
+
 </resources>
