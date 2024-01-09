@@ -36,16 +36,16 @@
     <string name="payment_cvc_input">Ex: 123</string>
 
     <string name="payment_mod_choose">Paypal</string>
-    
+
     <string name="payment_total_title">TOTAL</string>
     <integer name="payment_price">0</integer>
     <string name="payment_price_pic">£</string>
     <string name="payment_button_command">Commandez</string>
-    
+
 
     <!--Page d'accueil-->
     <string name="home_page_search_input">Rechercher..</string>
-    
+
     <string name="home_page_lobby">Accueil</string>
     <string name="home_page_man">Homme</string>
     <string name="home_page_women">Femme</string>
