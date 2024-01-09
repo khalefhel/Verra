@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 // Toast.makeText(this, "Vous devez remplir tous les champs!", Toast.LENGTH_LONG).show()
             } else {
                 val correctEmail = "bsd.raouf1@gmail.com"
-                val correctPassword = "azerty"
+                val correctPassword = "a"
 
                 if (correctEmail == txtEmail && correctPassword == txtPassword) {
                     email.setText("")

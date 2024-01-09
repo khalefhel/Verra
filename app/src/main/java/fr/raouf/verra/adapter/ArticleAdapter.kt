@@ -8,11 +8,12 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.raouf.verra.ArticleModel
+import fr.raouf.verra.HomeActivity
 import fr.raouf.verra.MainActivity
 import fr.raouf.verra.R
 
 class ArticleAdapter(
-    private val context: MainActivity,
+    private val context: HomeActivity,
     private val articleList: List<ArticleModel>,
     private val layoutId: Int
 ) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>(){
