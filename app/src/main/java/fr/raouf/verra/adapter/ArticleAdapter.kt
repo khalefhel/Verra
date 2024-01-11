@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.raouf.verra.ArticleModel
@@ -21,6 +22,9 @@ class ArticleAdapter(
     // Boite pour ranger tout les composants à controler
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val articleImage = view.findViewById<ImageView>(R.id.article_item)
+        val articleName = view.findViewById<TextView>(R.id.article_item_name)
+        val articleDescription = view.findViewById<TextView>(R.id.article_item_description)
+        val articlePrice = view.findViewById<TextView>(R.id.article_item_price)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -38,6 +42,11 @@ class ArticleAdapter(
 
         // Utiliser glide pour recuperer l'image à partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentArticle.imageUrl)).into(holder.articleImage)
+
+        // Recuperer le nom, description et le prix de l'article
+        holder.articleName.text = currentArticle.name
+        holder.articleDescription.text = currentArticle.description
+        holder.articlePrice.text = currentArticle.price.toString()
     }
 
 }

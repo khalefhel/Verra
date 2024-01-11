@@ -21,26 +21,28 @@
             android:scaleType="centerCrop"/>
 
         <TextView
+            android:id="@+id/article_item_description"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:layout_marginLeft="5dp"
             android:text="@string/article_description"
             style="@style/ArticleDescriptionStyle"/>
 
         <TextView
+            android:id="@+id/article_item_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:layout_marginLeft="10dp"
             android:text="@string/article_name"
             style="@style/ArticleNameStyle"/>
 
         <TextView
+            android:id="@+id/article_item_price"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:layout_marginLeft="10dp"
             android:text="@string/article_price"
             style="@style/ArticleNameStyle"/>
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>
