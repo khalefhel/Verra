@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 if (correctEmail == txtEmail && correctPassword == txtPassword) {
                     email.setText("")
                     password.setText("")
-                    // Inetnt explicite
+                    // Intent explicite
                     Intent(this, HomeActivity::class.java).also {
                         it.putExtra("email", "Raouf")
                         startActivity(it)

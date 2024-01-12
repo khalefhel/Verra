@@ -1,7 +1,10 @@
 package fr.raouf.verra
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -25,5 +28,11 @@ class HomeActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, homeFragment)
             .commit()
+
+        val onglet_man: View = findViewById(R.id.onglet_man)
+        onglet_man.setOnClickListener {
+            val intent = Intent(this, DetailsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

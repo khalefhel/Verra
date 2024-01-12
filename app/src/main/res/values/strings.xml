@@ -62,4 +62,9 @@
     <string name="article_name">Nom de l\'article</string>
     <string name="article_price">Le prix de l\'article</string>
 
+    <!-- Home details -->
+    <string name="article_jacket">Vestes</string>
+    <string name="article_pants">Pantalons</string>
+    <string name="article_shoe">Chaussures</string>
+
 </resources>
