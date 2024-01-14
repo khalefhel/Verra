@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.raouf.verra.ArticleModel
+import fr.raouf.verra.ArticleRepository
 import fr.raouf.verra.HomeActivity
 import fr.raouf.verra.MainActivity
 import fr.raouf.verra.R
@@ -25,6 +26,7 @@ class ArticleAdapter(
         val articleName = view.findViewById<TextView>(R.id.article_item_name)
         val articleDescription = view.findViewById<TextView>(R.id.article_item_description)
         val articlePrice = view.findViewById<TextView>(R.id.article_item_price)
+        val starIcon = view.findViewById<ImageView>(R.id.star_icon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,6 +42,9 @@ class ArticleAdapter(
         // Recuperer les informations de l'article
         val currentArticle = articleList[position]
 
+        // Recuperer le repository
+        val repo = ArticleRepository()
+
         // Utiliser glide pour recuperer l'image à partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentArticle.imageUrl)).into(holder.articleImage)
 
@@ -47,6 +52,22 @@ class ArticleAdapter(
         holder.articleName.text = currentArticle.name
         holder.articleDescription.text = currentArticle.description
         holder.articlePrice.text = currentArticle.price.toString()
+
+        // Verifier si l'article à été liké
+        if(currentArticle.liked) {
+            holder.starIcon.setImageResource(R.drawable.ic_star)
+        } else {
+            holder.starIcon.setImageResource(R.drawable.ic_unstar)
+        }
+
+        // rajouter une interaction sur cette etoile
+        holder.starIcon.setOnClickListener {
+            // inverse si le bouton est like ou non
+            currentArticle.liked = !currentArticle.liked
+
+            // mettre a jour l'objet article
+            repo.updateArticle(currentArticle)
+        }
     }
 
 }

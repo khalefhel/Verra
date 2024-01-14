@@ -4,11 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import fr.raouf.verra.fragments.HomeFragment
 
 class HomeActivity : AppCompatActivity() {
@@ -24,10 +20,20 @@ class HomeActivity : AppCompatActivity() {
         // 2: Afficher l'email dans le tvHello
         tvHello.text = "Bienvenu : $email"
 
-        val homeFragment = HomeFragment(this)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, homeFragment)
-            .commit()
+
+
+
+
+        // charger notre ActicleRepository
+        val repo = ArticleRepository()
+
+        // mettre à jour la liste d'articles
+        repo.updateData {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, HomeFragment(this))
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
         val onglet_man: View = findViewById(R.id.onglet_man)
         onglet_man.setOnClickListener {
