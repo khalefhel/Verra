@@ -20,10 +20,6 @@ class HomeActivity : AppCompatActivity() {
         // 2: Afficher l'email dans le tvHello
         tvHello.text = "Bienvenu : $email"
 
-
-
-
-
         // charger notre ActicleRepository
         val repo = ArticleRepository()
 
