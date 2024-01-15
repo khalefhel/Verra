@@ -16,6 +16,11 @@
         android:theme="@style/Theme.VERRA"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/link_page_signup_click"/>
+        <activity
             android:name=".DetailsActivity"
             android:exported="false" />
         <activity
@@ -33,7 +38,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".fragments.RegisterFragment" />
         <activity android:name=".fragments.HomeFragment" />
     </application>
