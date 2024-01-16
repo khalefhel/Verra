@@ -3,21 +3,27 @@ package fr.raouf.verra
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import fr.raouf.verra.fragments.HomeFragment
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    lateinit var connect: Button
-    lateinit var email: EditText
-    lateinit var password: EditText
-    lateinit var buttonregister: Button
+    lateinit var btnConnect: Button
+    lateinit var btnRegister: Button
+    lateinit var edit_Email: EditText
+    lateinit var edit_Password: EditText
+    lateinit var error: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,15 +31,38 @@ class MainActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        connect = findViewById<Button>(R.id.connect)
-        email = findViewById<EditText>(R.id.edit_Email)
-        password = findViewById<EditText>(R.id.edit_Password)
-        val error = findViewById<TextView>(R.id.error)
-        buttonregister = findViewById<Button>(R.id.button_register)
+        btnConnect = findViewById(R.id.btnConnect)
+        btnRegister = findViewById(R.id.btnRegister)
+        edit_Email = findViewById(R.id.edit_Email)
+        edit_Password = findViewById(R.id.edit_Password)
+        error = findViewById(R.id.error)
+    }
+    override fun onStart() {
+        super.onStart()
 
-        buttonregister.setOnClickListener {
+        btnRegister.setOnClickListener {
             Intent(this, RegisterActivity::class.java).also {
                 startActivity(it)
+            }
+        }
+
+        btnConnect.setOnClickListener {
+
+            edit_Email.error = null
+            edit_Password.error = null
+
+            val email = edit_Email.text.toString()
+            val password = edit_Password.text.toString()
+
+            if (email.isEmpty() || password.isEmpty()) {
+                if (password.isEmpty()) {
+                    edit_Password.error = "Mot de passe est obligatoire"
+                }
+                if (email.isEmpty()) {
+                    edit_Email.error = "Email est obligatoire"
+                }
+            } else {
+                signIn(email, password)
             }
         }
 
@@ -44,12 +73,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
+    fun signIn(email: String, password: String) {
+        Log.d("signIn", "signIn user....")
 
-        connect.setOnClickListener {
-            Intent(this, HomeActivity::class.java).also {
-                startActivity(it)
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {task ->
+            if (task.isSuccessful) {
+                Intent(this, HomeActivity::class.java).also {
+                    startActivity(it)
+                }
+                finish()
+            } else {
+                edit_Password.error = "Mot de passe incorrect"
             }
         }
     }

@@ -133,7 +133,7 @@
             android:textColor="@color/brown"/>
 
         <Button
-            android:id="@+id/connect"
+            android:id="@+id/btnConnect"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="50dp"
@@ -157,7 +157,7 @@
                 android:layout_marginRight="20dp"/>
 
             <Button
-                android:id="@+id/button_register"
+                android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/link_page_signup_click"

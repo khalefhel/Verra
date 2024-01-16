@@ -41,12 +41,15 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_unprofil"/>
+            android:src="@drawable/ic_unprofil"
+            android:backgroundTintMode="add"/>
 
         <ImageButton
+            android:id="@+id/btn_Logout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_star"/>
+            android:src="@drawable/ic_logout"
+            android:backgroundTintMode="add"/>
     </LinearLayout>
 
     <LinearLayout
@@ -104,7 +107,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvHello"
                 style="@style/AdvertisementText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

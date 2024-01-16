@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -14,7 +16,18 @@ class SplashScreenActivity : AppCompatActivity() {
 
         // Rediriger vers la page principale "MainActivity" après ' secondes
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            val auth = Firebase.auth
+            val currentUser = auth.currentUser
+            if (currentUser != null) {
+                Intent(this, HomeActivity::class.java).also {
+                    startActivity(it)
+                }
+            } else {
+                Intent(this, MainActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
             finish()
         }, 1000)
-}}
+    }
+}

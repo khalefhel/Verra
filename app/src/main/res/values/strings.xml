@@ -19,6 +19,7 @@
     <string name="link_page">Connecter</string>
     <string name="link_add_page_email_input">@string/register_add_page_email_input</string>
     <string name="link_add_page_password_input">@string/register_add_page_password_input</string>
+    <string name="link_add_page_confirm_password_input">Confirmer le mot de passe</string>
     <string name="link_page_forget">Mot de passe oublié ?</string>
     <string name="link_page_signup">Besoin d\'aide ?</string>
     <string name="link_page_signup_click">Créer un compte</string>
