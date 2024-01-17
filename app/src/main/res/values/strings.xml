@@ -50,6 +50,7 @@
     <string name="home_page_search_input">Rechercher..</string>
 
     <string name="home_page_lobby">Accueil</string>
+    <string name="home_page_browse">Parcourir</string>
     <string name="home_page_man">Homme</string>
     <string name="home_page_women">Femme</string>
     <string name="home_page_child">Enfant</string>

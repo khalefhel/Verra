@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.raouf.verra.ArticleModel
 import fr.raouf.verra.ArticleRepository
-import fr.raouf.verra.DetailsActivity
-import fr.raouf.verra.HomeActivity
-import fr.raouf.verra.MainActivity
 import fr.raouf.verra.R
 
 class ArticleAdapter(

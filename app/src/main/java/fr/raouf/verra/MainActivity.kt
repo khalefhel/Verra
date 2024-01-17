@@ -3,10 +3,12 @@ package fr.raouf.verra
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var edit_Email: EditText
     lateinit var edit_Password: EditText
     lateinit var error: TextView
+    lateinit var edit_Visibility: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +39,12 @@ class MainActivity : AppCompatActivity() {
         edit_Email = findViewById(R.id.edit_Email)
         edit_Password = findViewById(R.id.edit_Password)
         error = findViewById(R.id.error)
+        edit_Visibility = findViewById(R.id.edit_Visibility)
+
+        edit_Visibility.tag = true
+        edit_Visibility.setOnClickListener {
+            togglePasswordVisibility()
+        }
     }
     override fun onStart() {
         super.onStart()
@@ -62,15 +71,35 @@ class MainActivity : AppCompatActivity() {
                     edit_Email.error = "Email est obligatoire"
                 }
             } else {
+                togglePasswordVisibility()
                 signIn(email, password)
             }
         }
+    }
 
-        val button_tst: View = findViewById(R.id.button_tst)
-        button_tst.setOnClickListener {
-            val intent = Intent(this, HomeFragment::class.java)
-            startActivity(intent)
-        }
+     fun togglePasswordVisibility() {
+         val visibilityOff = R.drawable.ic_visibilityoff
+         val visibility = R.drawable.ic_visibility
+         val password = edit_Password.text.toString()
+
+         if (password.isNotEmpty()) {
+             if (edit_Visibility.tag == true) {
+                 edit_Visibility.setImageResource(visibilityOff)
+                 // Rendre le mot de passe visible
+                 edit_Password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+             } else {
+                 edit_Visibility.setImageResource(visibility)
+                 // Masquer le mot de passe
+                 edit_Password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+             }
+
+             // Inverser l'état de la propriété tag
+             edit_Visibility.tag = !(edit_Visibility.tag as Boolean)
+
+             // Mettre à jour le curseur à la fin du texte
+             edit_Password.setSelection(edit_Password.text.length)
+         }
+
     }
 
     fun signIn(email: String, password: String) {

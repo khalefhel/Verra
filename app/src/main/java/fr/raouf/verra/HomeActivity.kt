@@ -3,10 +3,8 @@ package fr.raouf.verra
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -16,7 +14,7 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    lateinit var onglet_man: Button
+    lateinit var btn_browse: Button
     lateinit var btn_Logout: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        onglet_man = findViewById(R.id.onglet_man)
+        btn_browse = findViewById(R.id.btn_browse)
         btn_Logout = findViewById(R.id.btn_Logout)
 
         // charger notre ActicleRepository
@@ -39,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
             transaction.commit()
         }
 
-        onglet_man.setOnClickListener {
+        btn_browse.setOnClickListener {
             Intent(this, DetailsActivity::class.java).also {
                 startActivity(it)
             }

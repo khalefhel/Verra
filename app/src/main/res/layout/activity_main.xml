@@ -107,9 +107,10 @@
                 android:inputType="textPassword"/>
 
             <ImageView
+                android:id="@+id/edit_Visibility"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_eye"
+                android:src="@drawable/ic_visibility"
                 android:layout_marginEnd="10dp"/>
         </LinearLayout>
 
@@ -123,7 +124,6 @@
             android:visibility="gone"/>
 
         <Button
-            android:id="@+id/button_tst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"

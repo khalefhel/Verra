@@ -1,12 +1,15 @@
 package fr.raouf.verra
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Phone
+import android.text.InputType
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -24,6 +27,8 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var editConfirmPassword: EditText
     lateinit var btnRegister: Button
     lateinit var registerError: TextView
+    lateinit var editVisibility: ImageView
+    lateinit var editConfirmVisibility: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -38,6 +43,20 @@ class RegisterActivity : AppCompatActivity() {
         editConfirmPassword = findViewById(R.id.editConfirmPassword)
         btnRegister = findViewById(R.id.btnRegister)
         registerError = findViewById(R.id.registerError)
+        editVisibility = findViewById(R.id.editVisibility)
+        editConfirmVisibility = findViewById(R.id.editConfirmVisibility)
+
+
+
+        editVisibility.tag = true
+        editVisibility.setOnClickListener {
+            toggleRegisterPasswordVisibility(editVisibility, editPassword)
+        }
+
+        editConfirmVisibility.tag = true
+        editConfirmVisibility.setOnClickListener {
+            toggleRegisterPasswordVisibility(editConfirmVisibility, editConfirmPassword)
+        }
 
         btnRegister.setOnClickListener {
 
@@ -100,7 +119,6 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     private fun initErrors() {
         editName.error = null
         editEmail.error = null
@@ -109,5 +127,24 @@ class RegisterActivity : AppCompatActivity() {
         btnRegister.error = null
         registerError.error = null
     }
+    fun toggleRegisterPasswordVisibility(imageView: ImageView, editText: EditText) {
+        val visibilityOff = R.drawable.ic_visibilityoff
+        val visibility = R.drawable.ic_visibility
 
+        if (imageView.tag == true) {
+            imageView.setImageResource(visibilityOff)
+            // Rendre le mot de passe visible
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+        } else {
+            imageView.setImageResource(visibility)
+            // Masquer le mot de passe
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
+
+        // Inverser l'état de la propriété tag
+        imageView.tag = !(imageView.tag as Boolean)
+
+        // Mettre à jour le curseur à la fin du texte si nécessaire
+        editText.setSelection(editText.text.length)
+    }
 }

@@ -76,4 +76,16 @@
         <item name="android:textSize">10sp</item>
     </style>
 
+    <!-- Creer un style pour la bottom navigation view -->
+    <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/cinzel</item>
+    </style>
+
+    <!-- personnaliser la barre de navigation-->
+    <style name="BottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/cinzel</item>
+    </style>
+
 </resources>

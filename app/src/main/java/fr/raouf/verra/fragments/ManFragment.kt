@@ -12,7 +12,7 @@ import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticaleItemDecoration
 import fr.raouf.verra.adapter.ArticleAdapter
 
-class DetailsFragment(
+class ManFragment(
     private val context: DetailsActivity
 ) : Fragment() {
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/details_page_man"
+        android:title="@string/home_page_man"/>
+
+    <item
+        android:id="@+id/details_page_women"
+        android:title="@string/home_page_women"/>
+
+    <item
+        android:id="@+id/details_page_child"
+        android:title="@string/home_page_child"/>
+</menu>

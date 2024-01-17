@@ -2,5 +2,6 @@
 <resources>
     <dimen name="default_marginTop">80dp</dimen>
     <dimen name="round_border">30dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 
 </resources>

@@ -1,15 +1,29 @@
 package fr.raouf.verra
 
+import android.net.Uri
+import com.google.android.gms.tasks.Continuation
+import com.google.android.gms.tasks.Task
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.FirebaseStorageKtxRegistrar
+import com.google.firebase.storage.UploadTask
 import fr.raouf.verra.ArticleRepository.Singleton.articleList
 import fr.raouf.verra.ArticleRepository.Singleton.databaseRef
+import fr.raouf.verra.ArticleRepository.Singleton.storageReference
+import java.util.UUID
 import javax.security.auth.callback.Callback
 
 class ArticleRepository {
     object Singleton {
+        // Donner le lien pour acceder au backet
+        private val BUCKET_URL: String = "gs://verra-d8488.appspot.com"
+
+        // se connecter à notre espace de stackage
+        val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(BUCKET_URL)
+
         // se connecter a la reference "article"
         val databaseRef = FirebaseDatabase.getInstance().getReference("article")
 
@@ -44,6 +58,32 @@ class ArticleRepository {
             }
 
         })
+    }
+
+    // créer une fonction pour envoyer des fichiers sur le storage
+    fun uploadImage(file: Uri) {
+        // verifier que ce fichier n'est pas null
+        if (file != null) {
+            val fileName = UUID.randomUUID().toString() + ".jpg"
+            val ref = storageReference.child(fileName)
+            val uploadTask = ref.putFile(file)
+
+            // demarrer la tache de l'envoi
+            uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+                // s'il y a eu un probleme lors de l'envoi du fichier
+                if (!task.isSuccessful) {
+                    task.exception?.let { throw it }
+                }
+                return@Continuation ref.downloadUrl
+            }).addOnCompleteListener { task ->
+                // verifier si tout a bien fonctionné
+                if (task.isSuccessful) {
+                    // reccuperer l'image
+                    val downloadUri = task.result
+                    // 4 minutes 18 secondes
+                }
+            }
+        }
     }
 
     // mettre a jour un objet article en bdd
