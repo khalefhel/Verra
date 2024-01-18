@@ -8,13 +8,12 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.FirebaseStorageKtxRegistrar
 import com.google.firebase.storage.UploadTask
 import fr.raouf.verra.ArticleRepository.Singleton.articleList
 import fr.raouf.verra.ArticleRepository.Singleton.databaseRef
+import fr.raouf.verra.ArticleRepository.Singleton.downloadUri
 import fr.raouf.verra.ArticleRepository.Singleton.storageReference
 import java.util.UUID
-import javax.security.auth.callback.Callback
 
 class ArticleRepository {
     object Singleton {
@@ -29,6 +28,9 @@ class ArticleRepository {
 
         // créer une liste qui va contenir nos articles
         val articleList = arrayListOf<ArticleModel>()
+
+        // contenir le lien de l'image courante
+        var downloadUri: Uri? = null
     }
 
     fun updateData(callback: () -> Unit) {
@@ -61,7 +63,7 @@ class ArticleRepository {
     }
 
     // créer une fonction pour envoyer des fichiers sur le storage
-    fun uploadImage(file: Uri) {
+    fun uploadImage(file: Uri, callback: () -> Unit) {
         // verifier que ce fichier n'est pas null
         if (file != null) {
             val fileName = UUID.randomUUID().toString() + ".jpg"
@@ -79,15 +81,16 @@ class ArticleRepository {
                 // verifier si tout a bien fonctionné
                 if (task.isSuccessful) {
                     // reccuperer l'image
-                    val downloadUri = task.result
-                    // 4 minutes 18 secondes
+                    downloadUri = task.result
+                    callback()
                 }
             }
         }
     }
 
     // mettre a jour un objet article en bdd
-    fun updateArticle(article: ArticleModel) {
-        databaseRef.child(article.id).setValue(article)
-    }
+    fun updateArticle(article: ArticleModel) = databaseRef.child(article.id).setValue(article)
+
+    // inserer un nouvel article en bdd
+    fun insertArticle(article: ArticleModel) = databaseRef.child(article.id).setValue(article)
 }

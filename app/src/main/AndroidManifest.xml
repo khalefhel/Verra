@@ -16,10 +16,13 @@
         android:theme="@style/Theme.VERRA"
         tools:targetApi="31">
         <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/link_page_signup_click"/>
+            android:label="@string/link_page_signup_click"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailsActivity"
             android:exported="false" />

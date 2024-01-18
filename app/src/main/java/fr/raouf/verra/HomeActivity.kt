@@ -12,6 +12,8 @@ import fr.raouf.verra.fragments.HomeFragment
 
 class HomeActivity : AppCompatActivity() {
 
+    lateinit var btn_test: ImageButton
+
     private lateinit var auth: FirebaseAuth
 
     lateinit var btn_browse: Button
@@ -23,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
+        btn_test = findViewById(R.id.btn_test)
         btn_browse = findViewById(R.id.btn_browse)
         btn_Logout = findViewById(R.id.btn_Logout)
 
@@ -48,6 +51,13 @@ class HomeActivity : AppCompatActivity() {
             val auth = Firebase.auth
             auth.signOut()
             Intent(this, MainActivity::class.java).also {
+                startActivity(it)
+            }
+            finish()
+        }
+
+        btn_test.setOnClickListener {
+            Intent(this, TestActivity::class.java).also {
                 startActivity(it)
             }
             finish()

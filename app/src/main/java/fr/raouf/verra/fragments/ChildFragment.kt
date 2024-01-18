@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import fr.raouf.verra.ArticleRepository
+import fr.raouf.verra.ArticleRepository.Singleton.articleList
 import fr.raouf.verra.DetailsActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticaleItemDecoration
@@ -25,7 +25,7 @@ class ChildFragment(
         val view = inflater.inflate(R.layout.collection_fragment, container, false)
 
         val horizontalRecyclerView = view.findViewById<RecyclerView>(R.id.horizontal_recycler_view)
-        horizontalRecyclerView.adapter = ArticleAdapter(context, ArticleRepository.Singleton.articleList, R.layout.article_horizontal)
+        horizontalRecyclerView.adapter = ArticleAdapter(context, articleList, R.layout.article_horizontal)
         horizontalRecyclerView.addItemDecoration(ArticaleItemDecoration())
 
         return view

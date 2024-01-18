@@ -27,7 +27,6 @@ class ArticleAdapter(
         val articlePrice = view.findViewById<TextView>(R.id.article_item_price)
         val starIcon = view.findViewById<ImageView>(R.id.star_icon)
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
             .from(parent.context)
@@ -36,7 +35,10 @@ class ArticleAdapter(
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = articleList.size
+
+    override fun getItemCount(): Int {
+        return articleList.size
+    }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // Recuperer les informations de l'article
         val currentArticle = articleList[position]
@@ -51,6 +53,7 @@ class ArticleAdapter(
         holder.articleName.text = currentArticle.name
         holder.articleDescription.text = currentArticle.description
         holder.articlePrice.text = currentArticle.price.toString()
+
 
         // Verifier si l'article à été liké
         if(currentArticle.liked) {

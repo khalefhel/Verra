@@ -67,6 +67,12 @@
     <string name="article_price">Le prix de l\'article</string>
 
     <!-- Home details -->
+    <string-array name="add_article_spinner_input">
+        <item>Homme : Veste</item>
+        <item>Homme : Pantalon</item>
+        <item>Homme : Chaussure</item>
+    </string-array>
+
     <string name="article_jacket">Vestes</string>
     <string name="article_pants">Pantalons</string>
     <string name="article_shoe">Chaussures</string>
