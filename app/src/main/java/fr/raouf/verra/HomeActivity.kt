@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import fr.raouf.verra.fragments.HomeFragment
+import fr.raouf.verra.repositories.ArticleRepository
 
 class HomeActivity : AppCompatActivity() {
 

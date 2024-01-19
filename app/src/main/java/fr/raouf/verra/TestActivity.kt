@@ -3,6 +3,7 @@ package fr.raouf.verra
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.raouf.verra.fragments.AddArticleFragment
+import fr.raouf.verra.repositories.ArticleRepository
 
 class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

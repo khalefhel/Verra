@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import fr.raouf.verra.ArticleRepository
-import fr.raouf.verra.ArticleRepository.Singleton.articleList
+import fr.raouf.verra.repositories.ArticleRepository.Singleton.articleList
 import fr.raouf.verra.DetailsActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticaleItemDecoration

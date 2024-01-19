@@ -1,5 +1,6 @@
 package fr.raouf.verra.fragments
 
+import ArticleModel
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -12,9 +13,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import fr.raouf.verra.ArticleModel
-import fr.raouf.verra.ArticleRepository
-import fr.raouf.verra.ArticleRepository.Singleton.downloadUri
+import fr.raouf.verra.repositories.ArticleRepository
+import fr.raouf.verra.repositories.ArticleRepository.Singleton.downloadUri
 import fr.raouf.verra.R
 import fr.raouf.verra.TestActivity
 import java.util.UUID

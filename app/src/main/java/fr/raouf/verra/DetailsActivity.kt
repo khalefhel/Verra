@@ -3,13 +3,14 @@ package fr.raouf.verra
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import fr.raouf.verra.fragments.ChildFragment
 import fr.raouf.verra.fragments.ManFragment
 import fr.raouf.verra.fragments.WomenFragment
+import fr.raouf.verra.repositories.ArticleChildRepository
+import fr.raouf.verra.repositories.ArticleRepository
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -17,6 +18,22 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        val repoChild = ArticleChildRepository()
+        repoChild.updateData{
+            loadFragment { ManFragment(this) }
+            // importer
+            val navigationView = findViewById<BottomNavigationView>(R.id.navigation_view)
+            navigationView.setOnNavigationItemSelectedListener {
+                when(it.itemId)
+                {
+                    R.id.details_page_man -> loadFragment { ManFragment(this) }
+                    R.id.details_page_women -> loadFragment { WomenFragment(this) }
+                    R.id.details_page_child -> loadFragment { ChildFragment(this) }
+                }
+                return@setOnNavigationItemSelectedListener true
+            }
+        }
 
         btn_return_home = findViewById(R.id.btn_return_home)
 
@@ -26,19 +43,6 @@ class DetailsActivity : AppCompatActivity() {
                 startActivity(it)
             }
             finish()
-        }
-
-        loadFragment { ManFragment(this) }
-        // importer
-        val navigationView = findViewById<BottomNavigationView>(R.id.navigation_view)
-        navigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId)
-            {
-                R.id.details_page_man -> loadFragment { ManFragment(this) }
-                R.id.details_page_women -> loadFragment { WomenFragment(this) }
-                R.id.details_page_child -> loadFragment { ChildFragment(this) }
-            }
-            return@setOnNavigationItemSelectedListener true
         }
     }
 

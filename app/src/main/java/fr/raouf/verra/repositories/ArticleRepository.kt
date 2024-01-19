@@ -1,5 +1,6 @@
-package fr.raouf.verra
+package fr.raouf.verra.repositories
 
+import ArticleModel
 import android.net.Uri
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
@@ -9,10 +10,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
-import fr.raouf.verra.ArticleRepository.Singleton.articleList
-import fr.raouf.verra.ArticleRepository.Singleton.databaseRef
-import fr.raouf.verra.ArticleRepository.Singleton.downloadUri
-import fr.raouf.verra.ArticleRepository.Singleton.storageReference
+import fr.raouf.verra.repositories.ArticleRepository.Singleton.articleList
+import fr.raouf.verra.repositories.ArticleRepository.Singleton.databaseRef
+import fr.raouf.verra.repositories.ArticleRepository.Singleton.downloadUri
+import fr.raouf.verra.repositories.ArticleRepository.Singleton.storageReference
 import java.util.UUID
 
 class ArticleRepository {
@@ -89,7 +90,9 @@ class ArticleRepository {
     }
 
     // mettre a jour un objet article en bdd
-    fun updateArticle(article: ArticleModel) = databaseRef.child(article.id).setValue(article)
+    fun updateArticle(article: ArticleModel): Task<Void> {
+        return databaseRef.child(article.id).setValue(article)
+    }
 
     // inserer un nouvel article en bdd
     fun insertArticle(article: ArticleModel) = databaseRef.child(article.id).setValue(article)
