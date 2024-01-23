@@ -10,7 +10,6 @@
         <device id="pixel_7_pro" />
         <device id="Nexus 5X" />
         <device id="4.7in WXGA" />
-        <device id="_android_virtual_device_id_Pixel_3a_API_34_extension_level_7_x86_64" />
         <device id="automotive_1024p_landscape" />
         <device id="tv_4k" />
         <target>android-34</target>
@@ -33,6 +32,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
+        <config>
+          <theme>@style/Theme.VERRA</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_reset.xml">
         <config>
           <theme>@style/Theme.VERRA</theme>
         </config>
@@ -74,24 +78,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21acf6dd-21e2-42be-9c19-eb325debc201" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleChildAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleChildRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/ResetActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleManAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleWomenAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleManRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleWomenRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_reset.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/ArticleModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/models/ArticleModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/ArticleRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/DetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/DetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/TestActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/TestActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleChildAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleChildAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/AddArticleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/AddArticleFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ChildFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ChildFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/HomeFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ManFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ManFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/WomenFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/WomenFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/models/ArticleModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/models/ArticleModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleChildRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleChildRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/ArticleRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +116,44 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="VERRA" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="VERRA" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="VERRA" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="VERRA" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -168,6 +216,9 @@
       <recent name="fr.raouf.verra.fragments" />
     </key>
     <key name="android.template.1367066868">
+      <recent name="fr.raouf.verra" />
+    </key>
+    <key name="android.template.833219213">
       <recent name="fr.raouf.verra" />
     </key>
     <key name="android.template.-2026096716">

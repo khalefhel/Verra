@@ -10,7 +10,9 @@ import fr.raouf.verra.fragments.ChildFragment
 import fr.raouf.verra.fragments.ManFragment
 import fr.raouf.verra.fragments.WomenFragment
 import fr.raouf.verra.repositories.ArticleChildRepository
+import fr.raouf.verra.repositories.ArticleManRepository
 import fr.raouf.verra.repositories.ArticleRepository
+import fr.raouf.verra.repositories.ArticleWomenRepository
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -19,20 +21,34 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
+        val repoMan = ArticleManRepository()
+        val repoWomen = ArticleWomenRepository()
         val repoChild = ArticleChildRepository()
-        repoChild.updateData{
+
+        fun setupNavigation() {
             loadFragment { ManFragment(this) }
-            // importer
             val navigationView = findViewById<BottomNavigationView>(R.id.navigation_view)
             navigationView.setOnNavigationItemSelectedListener {
-                when(it.itemId)
-                {
+                when (it.itemId) {
                     R.id.details_page_man -> loadFragment { ManFragment(this) }
                     R.id.details_page_women -> loadFragment { WomenFragment(this) }
                     R.id.details_page_child -> loadFragment { ChildFragment(this) }
                 }
                 return@setOnNavigationItemSelectedListener true
             }
+        }
+
+        repoMan.updateDataDetails {
+            loadFragment { ManFragment(this) }
+            setupNavigation()
+        }
+        repoWomen.updateDataDetails {
+            loadFragment { WomenFragment(this) }
+            setupNavigation()
+        }
+        repoChild.updateDataDetails {
+            loadFragment { ChildFragment(this) }
+            setupNavigation()
         }
 
         btn_return_home = findViewById(R.id.btn_return_home)

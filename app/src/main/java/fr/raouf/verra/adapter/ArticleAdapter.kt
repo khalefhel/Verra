@@ -1,6 +1,5 @@
 package fr.raouf.verra.adapter
 
-import ArticleModel
 import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.raouf.verra.repositories.ArticleRepository
 import fr.raouf.verra.R
+import fr.raouf.verra.models.ArticleModel
 
 class ArticleAdapter(
     private val context: Context,

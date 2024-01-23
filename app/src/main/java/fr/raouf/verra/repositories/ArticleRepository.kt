@@ -1,7 +1,7 @@
 package fr.raouf.verra.repositories
 
-import ArticleModel
 import android.net.Uri
+import android.util.Log
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.DataSnapshot
@@ -10,6 +10,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
+import fr.raouf.verra.models.ArticleModel
 import fr.raouf.verra.repositories.ArticleRepository.Singleton.articleList
 import fr.raouf.verra.repositories.ArticleRepository.Singleton.databaseRef
 import fr.raouf.verra.repositories.ArticleRepository.Singleton.downloadUri
@@ -25,7 +26,7 @@ class ArticleRepository {
         val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(BUCKET_URL)
 
         // se connecter a la reference "article"
-        val databaseRef = FirebaseDatabase.getInstance().getReference("article")
+        val databaseRef = FirebaseDatabase.getInstance().getReference("articles")
 
         // créer une liste qui va contenir nos articles
         val articleList = arrayListOf<ArticleModel>()
@@ -34,7 +35,7 @@ class ArticleRepository {
         var downloadUri: Uri? = null
     }
 
-    fun updateData(callback: () -> Unit) {
+    fun updateData(callback: (Boolean) -> Unit) {
         // absorber les données depuis la databaseRef -> liste d'article
         databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -53,11 +54,12 @@ class ArticleRepository {
                     }
                 }
                 // actionner le callback
-                callback()
+                callback(true)
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                callback(false)
+                Log.e("ArticleChildRepository", "Erreur lors de la lecture depuis la base de données : ${error.message}")
             }
 
         })

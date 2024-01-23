@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var edit_Password: EditText
     lateinit var error: TextView
     lateinit var edit_Visibility: ImageView
+    lateinit var btn_reset: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         edit_Password = findViewById(R.id.edit_Password)
         error = findViewById(R.id.error)
         edit_Visibility = findViewById(R.id.edit_Visibility)
+        btn_reset = findViewById(R.id.btn_reset)
 
         edit_Visibility.tag = true
         edit_Visibility.setOnClickListener {
@@ -49,10 +51,18 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        btn_reset.setOnClickListener {
+            Intent(this, ResetActivity::class.java).also {
+                startActivity(it)
+            }
+            finish()
+        }
+
         btnRegister.setOnClickListener {
             Intent(this, RegisterActivity::class.java).also {
                 startActivity(it)
             }
+            finish()
         }
 
         btnConnect.setOnClickListener {
