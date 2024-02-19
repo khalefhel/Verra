@@ -73,8 +73,8 @@
         <item>Homme : Chaussure</item>
     </string-array>
 
-    <string name="article_jacket">Vestes</string>
-    <string name="article_pants">Pantalons</string>
+    <string name="article_jacket">Hauts</string>
+    <string name="article_pants">Bas</string>
     <string name="article_shoe">Chaussures</string>
 
 </resources>

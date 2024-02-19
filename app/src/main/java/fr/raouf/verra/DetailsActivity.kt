@@ -16,6 +16,9 @@ import fr.raouf.verra.repositories.ArticleWomenRepository
 
 class DetailsActivity : AppCompatActivity() {
 
+    private var currentManCategory: String = ""
+    private var currentWomenCategory: String = ""
+    private var currentChildCategory: String = ""
     lateinit var  btn_return_home: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,29 +28,49 @@ class DetailsActivity : AppCompatActivity() {
         val repoWomen = ArticleWomenRepository()
         val repoChild = ArticleChildRepository()
 
+
+
         fun setupNavigation() {
-            loadFragment { ManFragment(this) }
+            //loadFragment { ManFragment(this, "HAUTS") }
             val navigationView = findViewById<BottomNavigationView>(R.id.navigation_view)
             navigationView.setOnNavigationItemSelectedListener {
                 when (it.itemId) {
-                    R.id.details_page_man -> loadFragment { ManFragment(this) }
-                    R.id.details_page_women -> loadFragment { WomenFragment(this) }
-                    R.id.details_page_child -> loadFragment { ChildFragment(this) }
+                    R.id.details_page_man -> {
+                        showFragmentInContainerMan("HAUTS", R.id.fragment_container_jackets)
+                        showFragmentInContainerMan("BAS", R.id.fragment_container_pants)
+                        showFragmentInContainerMan("SHOES", R.id.fragment_container_shoes)
+                    }
+                    R.id.details_page_women -> {
+                        showFragmentInContainerWomen("HAUTS", R.id.fragment_container_jackets)
+                        showFragmentInContainerWomen("BAS", R.id.fragment_container_pants)
+                        showFragmentInContainerWomen("SHOES", R.id.fragment_container_shoes)
+                    }
+                    R.id.details_page_child -> {
+                        showFragmentInContainerChild("HAUTS", R.id.fragment_container_jackets)
+                        showFragmentInContainerChild("BAS", R.id.fragment_container_pants)
+                        showFragmentInContainerChild("SHOES", R.id.fragment_container_shoes)
+                    }
                 }
                 return@setOnNavigationItemSelectedListener true
             }
         }
 
-        repoMan.updateDataDetails {
-            loadFragment { ManFragment(this) }
-            setupNavigation()
-        }
         repoWomen.updateDataDetails {
-            loadFragment { WomenFragment(this) }
+            showFragmentInContainerWomen("HAUTS", R.id.fragment_container_jackets)
+            showFragmentInContainerWomen("BAS", R.id.fragment_container_pants)
+            showFragmentInContainerWomen("SHOES", R.id.fragment_container_shoes)
             setupNavigation()
         }
         repoChild.updateDataDetails {
-            loadFragment { ChildFragment(this) }
+            showFragmentInContainerChild("HAUTS", R.id.fragment_container_jackets)
+            showFragmentInContainerChild("BAS", R.id.fragment_container_pants)
+            showFragmentInContainerChild("SHOES", R.id.fragment_container_shoes)
+            setupNavigation()
+        }
+        repoMan.updateDataDetails {
+            showFragmentInContainerMan("HAUTS", R.id.fragment_container_jackets)
+            showFragmentInContainerMan("BAS", R.id.fragment_container_pants)
+            showFragmentInContainerMan("SHOES", R.id.fragment_container_shoes)
             setupNavigation()
         }
 
@@ -61,8 +84,30 @@ class DetailsActivity : AppCompatActivity() {
             finish()
         }
     }
+    private fun showFragmentInContainerMan(category: String, containerId: Int) {
+        currentManCategory = category
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(containerId, ManFragment(this, currentManCategory))
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+    private fun showFragmentInContainerWomen(category: String, containerId: Int) {
+        currentWomenCategory = category
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(containerId, WomenFragment(this, currentWomenCategory))
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+    private fun showFragmentInContainerChild(category: String, containerId: Int) {
+        currentChildCategory = category
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(containerId, ChildFragment(this, currentChildCategory))
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
 
-    private fun loadFragment(fragmentProvider: () -> Fragment) {
+
+    private fun loadFragment(fragmentProvider: (String) -> Fragment) {
         // Mise à jour de la liste d'articles dans le repository
         ArticleRepository().updateData {
             val transaction = supportFragmentManager.beginTransaction()
@@ -72,12 +117,42 @@ class DetailsActivity : AppCompatActivity() {
 
             // Remplacement du fragment pour chaque conteneur
             containerIds.forEach { containerId ->
-                val fragment = fragmentProvider.invoke() // Appel de la lambda pour obtenir une nouvelle instance du fragment
+                val fragment = fragmentProvider.invoke(getCategoryForContainer(containerId))
                 transaction.replace(containerId, fragment)
             }
 
             transaction.addToBackStack(null)
             transaction.commit()
         }
+    }
+
+    private fun getCategoryForContainer(containerId: Int): String {
+        return when (containerId) {
+            R.id.fragment_container_jackets -> when (getCurrentFragment()) {
+                is ManFragment -> currentManCategory
+                is WomenFragment -> currentWomenCategory
+                is ChildFragment -> currentChildCategory
+                else -> ""
+            }
+            R.id.fragment_container_pants -> when (getCurrentFragment()) {
+                is ManFragment -> currentManCategory
+                is WomenFragment -> currentWomenCategory
+                is ChildFragment -> currentChildCategory
+                else -> ""
+            }
+            R.id.fragment_container_shoes -> when (getCurrentFragment()) {
+                is ManFragment -> currentManCategory
+                is WomenFragment -> currentWomenCategory
+                is ChildFragment -> currentChildCategory
+                else -> ""
+            }
+            else -> ""
+        }
+    }
+
+    private fun getCurrentFragment(): Fragment? {
+        // Logique pour obtenir le fragment actuellement affiché dans le conteneur
+        // Vous pouvez ajuster ceci en fonction de votre gestion des fragments
+        return supportFragmentManager.findFragmentById(R.id.fragment_container_jackets)
     }
 }

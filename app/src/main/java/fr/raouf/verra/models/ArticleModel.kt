@@ -25,7 +25,8 @@ data class ArticleManModel(
     override val name: String = "Lacoste",
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
-    override var liked: Boolean = false
+    override var liked: Boolean = false,
+    val category: String = "HAUTS" // Ajoutez la propriété de catégorie avec une valeur par défaut
 ) : Article
 
 // ArticleChildModel implémente l'interface Article
@@ -35,7 +36,8 @@ data class ArticleWomenModel(
     override val name: String = "Lacoste",
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
-    override var liked: Boolean = false
+    override var liked: Boolean = false,
+    val category: String = "HAUTS" // Ajoutez la propriété de catégorie avec une valeur par défaut
 ) : Article
 
 // ArticleChildModel implémente l'interface Article
@@ -45,7 +47,8 @@ data class ArticleChildModel(
     override val name: String = "Lacoste",
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
-    override var liked: Boolean = false
+    override var liked: Boolean = false,
+    val category: String = "HAUTS" // Ajoutez la propriété de catégorie avec une valeur par défaut
 ) : Article
 
 

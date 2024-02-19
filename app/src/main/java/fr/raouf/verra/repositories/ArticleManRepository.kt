@@ -15,13 +15,13 @@ class ArticleManRepository {
     fun updateDataDetails(callback: (Boolean) -> Unit) {
         ArticleManRepository.Singleton.databaseRefMan.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                ArticleManRepository.Singleton.articleManList.clear()
+                Singleton.articleManList.clear()
 
                 for (dsw in snapshot.children){
                     val articleMan = dsw.getValue(ArticleManModel::class.java)
 
                     if (articleMan != null) {
-                        ArticleManRepository.Singleton.articleManList.add(articleMan)
+                        Singleton.articleManList.add(articleMan)
                     }
                 }
                 callback(true)
@@ -33,5 +33,5 @@ class ArticleManRepository {
             }
         })
     }
-    fun updateArticleMan(articleMan: ArticleManModel) = ArticleManRepository.Singleton.databaseRefMan.child(articleMan.id).setValue(articleMan)
+    fun updateArticleMan(articleMan: ArticleManModel) = Singleton.databaseRefMan.child(articleMan.id).setValue(articleMan)
 }
