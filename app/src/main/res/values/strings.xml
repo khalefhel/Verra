@@ -77,4 +77,7 @@
     <string name="article_pants">Bas</string>
     <string name="article_shoe">Chaussures</string>
 
+    <!-- Popup details -->
+    <string name="popup_add">Ajouter l\'article</string>
+
 </resources>

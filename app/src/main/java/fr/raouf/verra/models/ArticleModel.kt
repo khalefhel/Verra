@@ -6,6 +6,7 @@ interface Article {
     val imageUrl: String
     val price: Double
     var liked: Boolean
+    val category: String
 }
 
 // ArticleModel implémente l'interface Article
@@ -15,7 +16,8 @@ data class ArticleModel(
     override val name: String = "Lacoste",
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
-    override var liked: Boolean = false
+    override var liked: Boolean = false,
+    override val category: String = "HAUTS"
 ) : Article
 
 // ArticleManModel implémente l'interface Article
@@ -26,7 +28,7 @@ data class ArticleManModel(
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
     override var liked: Boolean = false,
-    val category: String = "HAUTS" // Ajoutez la propriété de catégorie avec une valeur par défaut
+    override val category: String = "HAUTS"
 ) : Article
 
 // ArticleChildModel implémente l'interface Article
@@ -37,7 +39,7 @@ data class ArticleWomenModel(
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
     override var liked: Boolean = false,
-    val category: String = "HAUTS" // Ajoutez la propriété de catégorie avec une valeur par défaut
+    override val category: String = "HAUTS"
 ) : Article
 
 // ArticleChildModel implémente l'interface Article
@@ -48,7 +50,7 @@ data class ArticleChildModel(
     override val imageUrl: String = "https://example.com/your-image.jpg",
     override val price: Double = 0.0,
     override var liked: Boolean = false,
-    val category: String = "HAUTS" // Ajoutez la propriété de catégorie avec une valeur par défaut
+    override val category: String = "HAUTS"
 ) : Article
 
 

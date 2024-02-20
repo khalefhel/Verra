@@ -13,10 +13,10 @@ import fr.raouf.verra.repositories.ArticleRepository
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var btn_test: ImageButton
-
     private lateinit var auth: FirebaseAuth
 
+    private var currentCategory: String = ""
+    lateinit var btn_test: ImageButton
     lateinit var btn_browse: Button
     lateinit var btn_Logout: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +33,10 @@ class HomeActivity : AppCompatActivity() {
         // charger notre ActicleRepository
         val repo = ArticleRepository()
 
-        // mettre à jour la liste d'articles
-        repo.updateData {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, HomeFragment(this))
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
+        // Mettre à jour la liste d'articles pour chaque catégorie et conteneur
+        loadFragment(repo, "HAUTS", R.id.fragment_container1)
+        loadFragment(repo, "BAS", R.id.fragment_container2)
+        loadFragment(repo, "SHOES", R.id.fragment_container3)
 
         btn_browse.setOnClickListener {
             Intent(this, DetailsActivity::class.java).also {
@@ -62,6 +59,17 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(it)
             }
             finish()
+        }
+    }
+
+    // Fonction pour charger un fragment dans un conteneur spécifique
+    private fun loadFragment(repo: ArticleRepository, currentCategory: String, containerId: Int) {
+        repo.updateData {
+            val transaction = supportFragmentManager.beginTransaction()
+            val fragment = HomeFragment(this, currentCategory)
+            transaction.replace(containerId, fragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
     }
 }

@@ -28,8 +28,6 @@ class DetailsActivity : AppCompatActivity() {
         val repoWomen = ArticleWomenRepository()
         val repoChild = ArticleChildRepository()
 
-
-
         fun setupNavigation() {
             //loadFragment { ManFragment(this, "HAUTS") }
             val navigationView = findViewById<BottomNavigationView>(R.id.navigation_view)

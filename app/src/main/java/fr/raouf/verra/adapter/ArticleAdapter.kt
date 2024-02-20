@@ -9,12 +9,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import fr.raouf.verra.ArticlePopup
 import fr.raouf.verra.repositories.ArticleRepository
 import fr.raouf.verra.R
 import fr.raouf.verra.models.ArticleModel
 
 class ArticleAdapter(
-    private val context: Context,
+    val context: Context,
     private val articleList: List<ArticleModel>,
     private val layoutId: Int
 ) : RecyclerView.Adapter<ArticleAdapter.ViewHolder>(){
@@ -69,6 +70,12 @@ class ArticleAdapter(
 
             // mettre a jour l'objet article
             repo.updateArticle(currentArticle)
+        }
+
+        // interaction lors du clic sur un article
+        holder.itemView.setOnClickListener {
+            // afficher la popup
+            ArticlePopup(this, currentArticle).show()
         }
     }
 

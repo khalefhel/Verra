@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="360dp"
+    android:layout_height="600dp"
+    android:background="@color/vanilla">
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_close">
+
+        <ImageView
+            android:id="@+id/image_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/style" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/article_item_description"
+        style="@style/ArticleDescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/article_description"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/article_item_name"
+        style="@style/ArticleNameStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/article_name"
+        app:layout_constraintStart_toStartOf="@+id/article_item_description"
+        app:layout_constraintTop_toBottomOf="@+id/article_item_description" />
+
+    <TextView
+        android:id="@+id/article_item_price"
+        style="@style/ArticleNameStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/article_price"
+        app:layout_constraintStart_toStartOf="@+id/article_item_name"
+        app:layout_constraintTop_toBottomOf="@+id/article_item_name" />
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_euro"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/article_item_price"
+        app:layout_constraintStart_toEndOf="@+id/article_item_price"
+        app:layout_constraintTop_toTopOf="@+id/article_item_price" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/HomeCommandTextStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/commad_button"
+        android:text="@string/popup_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/article_item_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

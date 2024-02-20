@@ -11,9 +11,11 @@ import fr.raouf.verra.HomeActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticaleItemDecoration
 import fr.raouf.verra.adapter.ArticleAdapter
+import fr.raouf.verra.repositories.ArticleManRepository
 
 class HomeFragment(
-    private val context: HomeActivity
+    private val context: HomeActivity,
+    private val currentCategory: String
 ) : Fragment() {
 
     override fun onCreateView(
@@ -24,8 +26,10 @@ class HomeFragment(
 
         val view = inflater.inflate(R.layout.collection_fragment, container, false)
 
+        val filteredArticles = articleList.filter { it.category == currentCategory }
+
         val horizontalRecyclerView = view.findViewById<RecyclerView>(R.id.horizontal_recycler_view)
-        horizontalRecyclerView.adapter = ArticleAdapter(context, articleList, R.layout.article_horizontal)
+        horizontalRecyclerView.adapter = ArticleAdapter(context, filteredArticles, R.layout.article_horizontal)
         horizontalRecyclerView.addItemDecoration(ArticaleItemDecoration())
 
         return view
