@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import fr.raouf.verra.ArticlePopup
+import fr.raouf.verra.popup.ArticlePopup
 import fr.raouf.verra.repositories.ArticleRepository
 import fr.raouf.verra.R
 import fr.raouf.verra.models.ArticleModel

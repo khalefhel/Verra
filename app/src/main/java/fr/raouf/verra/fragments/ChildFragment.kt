@@ -6,13 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import fr.raouf.verra.DetailsActivity
+import fr.raouf.verra.Activity.DetailsActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticaleItemDecoration
 import fr.raouf.verra.adapter.ArticleChildAdapter
-import fr.raouf.verra.adapter.ArticleManAdapter
 import fr.raouf.verra.repositories.ArticleChildRepository.Singleton.articleChildList
-import fr.raouf.verra.repositories.ArticleManRepository
 
 class ChildFragment(
     private val context: DetailsActivity,

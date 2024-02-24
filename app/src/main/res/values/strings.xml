@@ -78,6 +78,7 @@
     <string name="article_shoe">Chaussures</string>
 
     <!-- Popup details -->
-    <string name="popup_add">Ajouter l\'article</string>
+    <string name="popup_add">Ajouter au panier</string>
+    <string name="add_article">Panier</string>
 
 </resources>

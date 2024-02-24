@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.raouf.verra.repositories.ArticleRepository.Singleton.articleList
-import fr.raouf.verra.HomeActivity
+import fr.raouf.verra.Activity.HomeActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticaleItemDecoration
 import fr.raouf.verra.adapter.ArticleAdapter
-import fr.raouf.verra.repositories.ArticleManRepository
 
 class HomeFragment(
     private val context: HomeActivity,

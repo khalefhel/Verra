@@ -3,7 +3,6 @@ package fr.raouf.verra.fragments
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.net.wifi.hotspot2.pps.HomeSp
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +12,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import fr.raouf.verra.DetailsActivity
-import fr.raouf.verra.HomeActivity
 import fr.raouf.verra.repositories.ArticleRepository
 import fr.raouf.verra.repositories.ArticleRepository.Singleton.downloadUri
 import fr.raouf.verra.R
-import fr.raouf.verra.TestActivity
+import fr.raouf.verra.Activity.TestActivity
 import fr.raouf.verra.models.ArticleModel
 import java.util.UUID
 

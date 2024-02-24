@@ -8,13 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import fr.raouf.verra.DetailsActivity
+import fr.raouf.verra.Activity.DetailsActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.models.ArticleWomenModel
+import fr.raouf.verra.popup.ArticleWomenPopup
 import fr.raouf.verra.repositories.ArticleWomenRepository
 
 class ArticleWomenAdapter (
-    private val context: DetailsActivity,
+    val context: DetailsActivity,
     private val articleWomenList: List<ArticleWomenModel>,
     private val layoutId: Int
 ) : RecyclerView.Adapter<ArticleWomenAdapter.ViewHolderWomen>(){
@@ -51,6 +52,11 @@ class ArticleWomenAdapter (
         holder.starIcon.setOnClickListener {
             currentWomenArticle.liked = !currentWomenArticle.liked
             repoWomen.updateArticleWomen(currentWomenArticle)
+        }
+        // interaction lors du clic sur un article
+        holder.itemView.setOnClickListener {
+            // afficher la popup
+            ArticleWomenPopup(this, currentWomenArticle).show()
         }
     }
 

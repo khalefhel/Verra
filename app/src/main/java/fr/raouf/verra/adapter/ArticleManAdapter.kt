@@ -8,13 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import fr.raouf.verra.DetailsActivity
+import fr.raouf.verra.Activity.DetailsActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.models.ArticleManModel
+import fr.raouf.verra.popup.ArticleManPopup
 import fr.raouf.verra.repositories.ArticleManRepository
 
 class ArticleManAdapter (
-    private val context: DetailsActivity,
+    val context: DetailsActivity,
     private val articleManList: List<ArticleManModel>,
     private val layoutId: Int
 ) : RecyclerView.Adapter<ArticleManAdapter.ViewHolderMan>() {
@@ -50,6 +51,11 @@ class ArticleManAdapter (
         holder.starIcon.setOnClickListener {
             currentManArticle.liked = !currentManArticle.liked
             repoMan.updateArticleMan(currentManArticle)
+        }
+        // interaction lors du clic sur un article
+        holder.itemView.setOnClickListener {
+            // afficher la popup
+            ArticleManPopup(this, currentManArticle).show()
         }
     }
     override fun getItemCount(): Int = articleManList.size

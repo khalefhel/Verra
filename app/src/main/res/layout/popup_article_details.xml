@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="@+id/article_item_price" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_addArticle"
         style="@style/HomeCommandTextStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
