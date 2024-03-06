@@ -8,7 +8,6 @@ import android.widget.ImageButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import fr.raouf.verra.CartActivity
 import fr.raouf.verra.PaymentActivity
 import fr.raouf.verra.R
 import fr.raouf.verra.fragments.HomeFragment

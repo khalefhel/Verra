@@ -98,50 +98,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21acf6dd-21e2-42be-9c19-eb325debc201" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartItem.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartItemsAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/PaymentActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/popup/ArticleChildPopup.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/popup/ArticleManPopup.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/popup/ArticleWomenPopup.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/paypal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cart.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_download.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_download.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cahier des charges/CAHIER DES CHARGES.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Cahier des charges/CAHIER DES CHARGES.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/ArticlePopup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/popup/ArticlePopup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/DetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/DetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/HomeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/RegisterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/RegisterActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/ResetActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/ResetActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/SplashScreenActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/SplashScreenActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/TestActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/TestActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleChildAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleChildAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleManAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleManAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleWomenAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/ArticleWomenAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/AddArticleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/AddArticleFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ChildFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ChildFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ManFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/ManFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/WomenFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/fragments/WomenFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/Activity/CartActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/models/CartItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartItemsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/adapter/CartItemsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/CartManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/repositories/CartManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/popup/ArticlePopup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/raouf/verra/popup/ArticlePopup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_reset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_reset.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_article_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_article_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +126,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[p7wgjnhud6uc45e6]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -256,10 +231,10 @@
       <recent name="C:\Users\Dual Computer\Desktop\.code\VERRA\app\src\main\res\font" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="fr.raouf.verra.Activity" />
-      <recent name="fr.raouf.verra.popup" />
       <recent name="fr.raouf.verra.repositories" />
       <recent name="fr.raouf.verra.models" />
+      <recent name="fr.raouf.verra.Activity" />
+      <recent name="fr.raouf.verra.popup" />
       <recent name="fr.raouf.verra.data" />
     </key>
     <key name="android.template.-2053401917">

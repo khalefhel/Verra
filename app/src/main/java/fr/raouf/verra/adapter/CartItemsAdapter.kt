@@ -1,4 +1,4 @@
-package fr.raouf.verra
+package fr.raouf.verra.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import fr.raouf.verra.models.CartItem
+import fr.raouf.verra.repositories.CartManager
+import fr.raouf.verra.R
 
 interface CartItemChangeListener {
     fun onCartItemRemoved()

@@ -1,6 +1,7 @@
-package fr.raouf.verra
+package fr.raouf.verra.repositories
 
 import fr.raouf.verra.models.ArticleModel
+import fr.raouf.verra.models.CartItem
 
 object CartManager {
     private val items = mutableListOf<CartItem>()

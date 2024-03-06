@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import fr.raouf.verra.CartManager
+import fr.raouf.verra.repositories.CartManager
 import fr.raouf.verra.R
 import fr.raouf.verra.adapter.ArticleAdapter
 import fr.raouf.verra.models.ArticleModel

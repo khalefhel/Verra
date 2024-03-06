@@ -1,4 +1,4 @@
-package fr.raouf.verra
+package fr.raouf.verra.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +7,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import fr.raouf.verra.Activity.HomeActivity
+import fr.raouf.verra.adapter.CartItemChangeListener
+import fr.raouf.verra.adapter.CartItemsAdapter
+import fr.raouf.verra.repositories.CartManager
+import fr.raouf.verra.R
 
-class CartActivity : AppCompatActivity(), CartItemChangeListener  {
+class CartActivity : AppCompatActivity(), CartItemChangeListener {
     // Implémentation de la méthode de l'interface
     override fun onCartItemRemoved() {
         updateTotalPrice()
@@ -26,8 +29,8 @@ class CartActivity : AppCompatActivity(), CartItemChangeListener  {
         cartItemsRecyclerView = findViewById(R.id.rv_cartItems)
         cartItemsRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Supposons que CartItemsAdapter est votre adapter qui prend une liste de CartItem
-        cartItemsAdapter = CartItemsAdapter(CartManager.getItems(), this) // Assurez-vous que cette méthode retourne la liste actuelle des articles dans le panier
+
+        cartItemsAdapter = CartItemsAdapter(CartManager.getItems(), this)
         cartItemsRecyclerView.adapter = cartItemsAdapter
 
         // Définissez l'adapter de votre RecyclerView
